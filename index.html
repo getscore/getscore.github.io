@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- head -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- title -->
+    <title>sCore for project final assignment</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/score.png" type="image/x-icon">
+    <!-- score.css -->
+    <link rel="stylesheet" href="css/score.min.css">
+    <!-- onepagenav.css -->
+    <link rel="stylesheet" href="vendor/onepagenav/onepagenav.min.css">
+    <!-- demo -->
+    <link rel="stylesheet" href="demo/demo.css">
+</head>
+<!-- end head -->
+
+<!-- body -->
+<body>
+
+    <!-- code -->
+
+    <div class="doc-nav-items" id="docNavItems">
+        <ul class="doc-nav-items-list" id="navDoc">
+            <li class="current"><a href="#index">sCore Doc</a></li>
+            <li><a href="#general-code">General Code</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#position">Position</a></li>
+            <li><a href="#layout">Layout</a></li>
+            <li><a href="#hidden-media-query">Hidden Media Query</a></li>
+            <li><a href="#button">Button</a></li>
+            <li><a href="#load-page">Load Page</a></li>
+            <li><a href="#sidebar">Sidebar</a></li>
+            <li><a href="#owlCarousel">owlCarousel.js</a></li>
+            <li><a href="#onepagenav">onepagenav.js</a></li>
+        </ul>
+    </div>
+
+    <div class="doc-window" id="docWindow"></div>
+
+    <!-- header -->
+    <div class="demo-header" id="index">
+        
+        <div class="doc-nav-toggle" id="docNavToggle">
+            <i class="doc-btn-icon"></i>
+        </div>
+
+        <div class="position-middle">
+            <img src="img/score.png" alt="icon">
+            <p class="demo-desc">sCore For Project Final Assignment</p>
+            <a class="btn" download="" href="http://github.com/getscore/getscore.github.io/archive/master.zip">Download v1.0</a>
+            <a class="btn" href="http://github.com/getscore/getscore.github.io">Github</a>
+        </div>
+
+    </div>
+    <!-- end header -->
+
+    <!-- doc -->
+    <div class="layout">
+        <div class="demo-content">
+            <div id="general-code">
+                <h5>General Code</h5>
+            </div>
+
+<xmp>/*-----------------------------------------------------------------
+
+[sCore Framework]
+
+Organization  : Flamecore
+Name Project  : sCore for project final assignment
+Version       : 1.0
+Last Change   : 22/07/2018 [The beginning]
+Github Page   : http://getscore.github.io 
+Author        : http://andikachamberlin.github.io
+License       : MIT
+
+-------------------------------------------------------------------*/
+
+/*** part CSS ***/
+
+/*-----------------------------------------------------------------*/
+/*general code*/
+
+*,
+*:before,
+*:after{
+  -webkit-box-sizing : border-box;
+          box-sizing : border-box;
+}
+
+body{
+            margin : 0;
+       font-family : -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+             color : #888;
+         font-size : 15px;
+  background-color : #fafafa;
+       line-height : 1.3;
+        overflow-y : auto;
+        overflow-x : hidden;
+}
+
+/*note*/
+
+/*
+1. -apple-system target San Francisco di Safari (di Mac OS X dan iOS), dan 
+menargetkan Neue Helvetica dan Lucida Grande pada versi lama Mac OS X. 
+Ini benar memilih antara San Francisco Text San Francisco Display tergantung pada ukuran teks.
+2. system-ui mewakili font UI default pada platform yang diberikan.
+3. BlinkMacSystemFont setara dengan Chrome di Mac OS X.
+4. Segoe UI menargetkan Windows dan Windows Phone.
+5. Roboto menargetkan Android dan OS Chrome yang lebih baru. 
+Ini sengaja didaftarkan setelah Segoe UI sehingga jika Anda pengembang Android di Windows 
+dan menginstal Roboto , maka Segoe UI akan digunakan.
+*/
+
+a{
+  text-decoration : none;
+            color : inherit;
+ background-color : transparent;
+}
+
+p{
+  word-wrap : break-word;
+  margin    : 0;
+  padding   : 0;
+}
+
+pre,
+code {
+  font-family : monospace, monospace;
+  font-size   : 14px;
+}
+
+pre code{
+    background-color : inherit;
+             display : block;
+             padding : 16px;
+               color : inherit;
+         font-family : monospace;
+         line-height : 1.3;
+            overflow : auto;
+              border : 1px solid #ddd;
+              margin : 16px 0;
+       -moz-tab-size : 4;
+         -o-tab-size : 4;
+            tab-size : 4;
+         white-space : pre;
+}
+
+b,
+strong {
+  font-weight : bolder;
+}
+
+sub,
+sup {
+  font-size : 75%;
+}
+
+h1{
+  font-size : 50px;
+}
+h2{
+  font-size : 42px;
+}
+h3{
+  font-size : 35px;
+}
+h4{
+  font-size : 28px;
+}
+h5{
+  font-size : 21px;
+}
+h6{
+  font-size : 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+       margin : 0;
+  font-weight : bold;
+  font-family : inherit;
+        color : inherit;
+}
+
+img{
+  max-width    : 100%;
+  display      : block;
+  margin       : auto;
+  border-style : none;
+}
+
+button{
+       display     : inline-block;
+       font-family : inherit;
+       color       : inherit;
+      padding      : 10px 16px;
+  background-color : inherit;
+            border : 1px solid #eee;
+}
+
+input,
+select,
+textarea {
+  font-family : inherit;
+    font-size : 100%;
+  line-height : 1.15;
+       margin : 0;
+}
+
+textarea {
+  overflow : auto;
+}
+
+ul,
+ol,
+li{
+  padding : 0;
+  margin  : 0;
+}
+
+li{
+  list-style-type : none;
+}
+
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section, 
+main,
+video {
+  display : block;
+}
+
+iframe{
+  display : block;
+  width: 100%;
+  border: none;
+}
+
+canvas{
+  display: block;
+}
+
+table{
+  border-collapse : collapse;
+   border-spacing : 0;
+          display : table;
+            width : 100%;
+}
+
+table td, 
+table th{
+         display : table-cell;
+      text-align : left;
+  vertical-align : top;
+         padding : 12px 16px;
+          border : 1px solid #ddd;
+}
+
+/*end general code*/
+/*-----------------------------------------------------------------*/
+</xmp>
+
+            <div id="grid">
+                <h5>Grid</h5>
+            </div>
+
+<div class="demo-row">
+    <div class="row grid">
+        <div class="column grid l3 m6 s12">
+            <div class="demo-col">
+                1
+            </div>
+        </div>
+        <div class="column grid l3 m6 s12">
+            <div class="demo-col">
+                2
+            </div>
+        </div>
+        <div class="column grid l3 m6 s12">
+            <div class="demo-col">
+                3
+            </div>
+        </div>
+        <div class="column grid l3 m6 s12">
+            <div class="demo-col">
+                4
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Class grid berfungsi untuk menambahkan padding sisi pada column. Jika tidak ingin jarak hapus class grid</p>
+
+<xmp><div class="row grid">
+    <div class="column grid l3 m6 s12">
+        
+    </div>
+    <div class="column grid l3 m6 s12">
+        
+    </div>
+    <div class="column grid l3 m6 s12">
+        
+    </div>
+    <div class="column grid l3 m6 s12">
+        
+    </div>
+</div>
+</xmp>
+
+<h6>Grid Offset</h6>
+
+<div class="demo-row">
+    <div class="row grid">
+        <div class="column grid l6 l6-offset m6 m6-offset s6 s6-offset">
+            <div class="demo-col">
+                1
+            </div>
+        </div>
+    </div>
+</div>
+
+<xmp><div class="row grid">
+    <div class="column grid l6 l6-offset m6 m6-offset s6 s6-offset">
+        
+    </div>
+</div>
+</xmp>
+
+<h6>Many Column</h6>
+
+<div class="demo-row">
+    <div class="row grid">
+        <div class="column grid l6 m6 s12">
+            <div class="demo-col">
+                1
+            </div>
+        </div>
+        <div class="column grid l6 m6 s12">
+            <div class="demo-col">
+                2
+            </div>
+            <div class="row grid">
+                <div class="column grid l6 m6 s12">
+                    <div class="demo-col">
+                        2.1
+                    </div>
+                </div>
+                <div class="column grid l6 m6 s12">
+                    <div class="demo-col">
+                        2.2
+                    </div>
+                    <div class="row grid">
+                        <div class="column grid l6 m6 12">
+                            <div class="demo-col">
+                                2.2.1
+                            </div>
+                        </div>
+                        <div class="column grid l6 m6 12">
+                            <div class="demo-col">
+                                2.2.2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<xmp><div class="row grid">
+    <div class="column grid l6 m6 s12">
+        
+    </div>
+    <div class="column grid l6 m6 s12">
+
+        <div class="row grid">
+            <div class="column grid l6 m6 s12">
+               
+            </div>
+            <div class="column grid l6 m6 s12">
+                
+                <div class="row grid">
+                    <div class="column grid l6 m6 12">
+                       
+                    </div>
+                    <div class="column grid l6 m6 12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</xmp>
+
+            <div id="typography">
+                <h5>Typography</h5>
+            </div>
+
+<div class="left-align demo-margin-top">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis!
+</div>
+<xmp>.left-align {
+    text-align: left;
+}
+</xmp>
+<div class="right-align demo-margin-top">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis!
+</div>
+<xmp>
+.right-align {
+    text-align: right;
+}
+</xmp>
+<div class="center-align demo-margin-top">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis!
+</div>
+<xmp>.center-align {
+    text-align: center;
+}
+</xmp>
+<div class="justify-align demo-margin-top">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque praesentium, magnam numquam sequi. Adipisci saepe accusantium at earum incidunt delectus ipsa nam, eligendi reprehenderit! Laborum vel nobis provident debitis!
+</div>
+<xmp>.justify-align {
+    text-align: justify;
+}
+</xmp>
+
+            <div id="position">
+                <h5>Position</h5>
+            </div>
+
+<div class="demo-position">
+<div class="position-topleft">
+top left
+</div>
+<div class="position-topright">
+top right
+</div>
+<div class="position-bottomleft">
+Bottom Left
+</div>
+<div class="position-bottomright">
+Bottom Right
+</div>
+<div class="position-bottommiddle">
+Bottom Middle
+</div>
+<div class="position-topmiddle">
+Top Middle
+</div>
+<div class="position-leftmiddle">
+Left Middle
+</div>
+<div class="position-rightmiddle">
+Right Middle
+</div>
+<div class="position-middle">
+Middle
+</div>
+</div>
+
+<xmp><div class="position-topleft">
+    Top left
+</div>
+<div class="position-topright">
+    Top right
+</div>
+<div class="position-bottomleft">
+    Bottom Left
+</div>
+<div class="position-bottomright">
+    Bottom Right
+</div>
+<div class="position-bottommiddle">
+    Bottom Middle
+</div>
+<div class="position-topmiddle">
+    Top Middle
+</div>
+<div class="position-leftmiddle">
+    Left Middle
+</div>
+<div class="position-rightmiddle">
+    Right Middle
+</div>
+<div class="position-middle">
+    Middle
+</div>
+</xmp>
+
+            <div id="layout">
+                <h5>Layout</h5>
+            </div>
+<p class="demo-margin">Class layout digunakan untuk membuat content berada ditengah ketika lebar browser melebih 1024px. Umumnya ini diletakan sebelum main content</p>
+
+<xmp><div class="layout"></div>
+</xmp>
+
+            <div id="hidden-media-query">
+                <h5>Hidden Media Query</h5>
+            </div>
+
+<p class="demo-margin">Class ini berguna untuk menghilangkan element pada kondisi desktop, tablet dan smartphone.</p>
+
+<xmp>@media (max-width:600px){
+  .hs{display:none!important}
+}
+
+@media (max-width:992px) and (min-width:601px){
+  .hm{display:none!important}
+}
+
+@media (min-width:993px){
+  .hl{display:none!important}
+}
+</xmp>
+<ul>
+    <li>hs : smartphone</li>
+    <li>hm : tablet</li>
+    <li>hl : desktop</li>
+</ul>
+
+<p class="demo-margin">!important berguna untuk membuatnya penting, artinya class ini dipentingkan untuk menghilangkan element</p>
+
+            <div id="button">
+                <h5>Button</h5>
+            </div>
+<span class="btn">Button</span>
+<xmp><span class="btn"></span>
+</xmp>
+            <div id="load-page">
+                <h5>Load Page</h5>
+            </div>
+
+            <a class="btn demo-margin" href="documentation/load.html">Demo</a>
+
+<xmp><div class="load" id="load">
+        <div class="load-middle">
+            <div class="load-circle"></div>
+        </div>
+    </div>
+</xmp>
+  
+            <div id="sidebar">
+                <h5>Sidebar</h5>
+            </div>
+            <a class="btn demo-margin" href="documentation/sidebar.html">Demo</a>
+<xmp><!-- sidebar -->
+<section class="sidebar" id="sidebar">
+
+    <!-- sidebar header -->
+    <div class="sidebar-header">
+        <div class="position-middle">
+            <h4>Header</h4>
+        </div>
+    </div>
+    <!-- /sidebar header -->
+
+    <!-- sidebar items -->
+    <div class="sidebar-items">
+
+        <!-- sidebar list -->
+        <ul class="sidebar-list" id="sidebar-list">
+            <li class="sidebar-toggle">
+                <a>Master<i class="sidebar-arrow"></i></a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="#">App</a></li>
+                    <li><a href="#">Design</a></li> 
+                    <li class="sidebar-toggle">
+                        <a>Test Text Overflow Dot dot dot dot dot
+                            <i class="sidebar-arrow"></i>
+                        </a>
+                        <ul class="sidebar-dropdown sidebar-sub-1">
+                            <li><a href="#">UI</a></li>
+                            <li><a href="#">UX</a></li>
+                            <li class="sidebar-toggle">
+                                <a>Front End
+                                    <i class="sidebar-arrow"></i>
+                                </a>
+                                <ul class="sidebar-dropdown sidebar-sub-2">
+                                    <li><a href="#">HTML</a></li>
+                                    <li class="sidebar-toggle">
+                                        <a>Javascript
+                                            <i class="sidebar-arrow"></i>
+                                        </a>
+                                        <ul class="sidebar-dropdown sidebar-sub-3">
+                                            <li><a href="#">jQuery</a></li>
+                                            <li><a href="#">jQuery UI</a></li>
+                                            <li><a href="#">jQuery Mobile</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">Canvas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Film Maker</a></li>
+                    <li><a href="#">Editing</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-toggle">
+                <a>Newbie<i class="fa fa-angle-down sidebar-arrow"></i></a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Javascript</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-toggle">
+                <a>Film Maker<i class="fa fa-angle-down sidebar-arrow"></i></a>
+                <ul class="sidebar-dropdown">
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Camera</a></li>
+                    <li><a href="#">Software Editing</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /sidebar list -->
+    </div>
+    <!-- /sidebar items -->
+
+</section>
+<!-- /sidebar -->
+
+<!-- sidebar window close -->
+<div class="sidebar-window" id="sidebar-window"></div>
+<!-- /sidebar window close -->
+
+<!-- sidebar btn -->
+<div class="sidebar-btn" id="sidebar-btn">
+    <i class="sidebar-btn-icon"></i>
+</div>
+<!-- end sidebar btn -->
+</xmp>
+            <div id="owlCarousel">
+                <h5>owlCarousel.js</h5>
+            </div>
+
+<a class="btn demo-margin" href="documentation/owlcarousel.html">Demo</a>
+
+<xmp><style>
+    .owl-bg1{
+        background-image: url(../vendor/owlcarousel/img/a.jpg);
+    }
+    .owl-bg2{
+        background-image: url(../vendor/owlcarousel/img/b.jpg);
+    }
+    .owl-bg3{
+        background-image: url(../vendor/owlcarousel/img/c.jpg);
+    }
+</style>
+</xmp>
+
+<xmp><link rel="stylesheet" href="vendor/owlcarousel/owlcarousel.min.css"></xmp>
+
+<xmp><!-- owlCarousel -->
+<div class="owl-carousel owl-theme">
+    <div class="owl-bg owl-bg1">
+        <div class="owl-bg-light">
+            <div class="position-middle center-align">
+                sCore With Owl Carousel 1
+            </div>
+        </div>
+    </div>
+    <div class="owl-bg owl-bg2">
+        <div class="owl-bg-light">
+            <div class="position-middle center-align">
+                sCore With Owl Carousel 2
+            </div>
+        </div>
+    </div>
+    <div class="owl-bg owl-bg3">
+        <div class="owl-bg-light">
+            <div class="position-middle center-align">
+                sCore With Owl Carousel 3
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end owlCarousel -->
+</xmp>
+
+<xmp><script src="vendor/owlcarousel/owlcarousel.min.js"></script>
+<script src="vendor/owlcarousel/owlcarousel.setting.min.js"></script>
+</xmp>
+            <div id="onepagenav">
+                <h5>One Page Nav</h5>
+            </div>
+
+<xmp><!-- onepagenav.css -->
+<link rel="stylesheet" href="vendor/onepagenav/onepagenav.min.css">
+</xmp>
+
+<xmp><div class="doc-nav-items" id="docNavItems">
+    <ul class="doc-nav-items-list" id="navDoc">
+        <li class="current"><a href="#general-code">General Code</a></li>
+        <li><a href="#grid">Grid</a></li>
+    </ul>
+</div>
+
+<div class="doc-window" id="docWindow"></div>
+    
+<div class="doc-nav-toggle" id="docNavToggle">
+    <i class="doc-btn-icon"></i>
+</div>
+
+<div id="general-code">
+
+</div>
+
+<div id="grid">
+
+</div>
+
+</xmp>
+
+<xmp><script src="vendor/onepagenav/onepagenav.min.js"></script>
+<script src="vendor/onepagenav/onepagenav.setting.min.js"></script>
+</xmp>
+
+
+        </div>
+    </div>
+    <!-- end doc -->
+
+
+    <!-- /code -->
+
+    <footer>
+        <a href="http://andikachamberlin.github.io">&copy; Andika Chamberlin 2018</a>
+    </footer>
+
+    <!-- script -->
+
+    <!-- jquery v3.2.1.min.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="vendor/onepagenav/onepagenav.min.js"></script>
+    <script src="vendor/onepagenav/onepagenav.setting.min.js"></script>
+    <script src="js/score.min.js"></script>
+
+    <!-- end script -->
+
+</body>
+</html>
